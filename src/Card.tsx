@@ -1,3 +1,5 @@
+import "./Card.css"
+
 type ControlType = {
     title?: string
     outerData: Array<explanationArr>
@@ -13,13 +15,14 @@ type explanationArr = {
 export const Card = (props: ControlType) => {
     return (
         <>
-            {props.outerData.map((el) => {
+            {props.outerData.map((el,index) => {
                 return (
-                    <div className="card">
-                        <h1>{props.title}</h1>
-                        <h2>Manufacturer: {el.manufacturer}</h2>
-                        <h3>Model: {el.model}</h3>
-                    </div>
+                            <tr>
+                                <td>{index+1}</td>
+                                <td>{el.manufacturer}</td>
+                                <td>{el.model}</td>
+                            </tr>
+
                 )
             })}
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
 import './App.css';
-import { Card} from './Card';
+import {Card} from './Card';
 
-export default function App() {
+function App() {
 
   const topCars = [
     { manufacturer: 'BMW', model: 'm5cs' },
@@ -14,10 +14,17 @@ export default function App() {
   return (
       <div className="App">
 
-        <Card title="Car card :" outerData={topCars} />
+          <h1>Car cards :</h1>
+          <table>
+              <tr>
+                  <th>Car card </th>
+                  <th>Manufacturer</th>
+                  <th>Model</th>
+              </tr>
+                <Card title="Car card :" outerData={topCars} />
+          </table>
 
       </div>
-  );
+  )
 }
-
-
+export default App
